@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realistic Weather Effects</title>
+  <title>Realistic Weather Effects with Wind</title>
   <style>
     * {
       margin: 0;
@@ -80,8 +80,8 @@
       cursor: pointer;
     }
     @keyframes rainFall {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(1000px); } /* Longer fall for more realism */
+      0% { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(1000px) translateX(50px); } /* Longer fall with horizontal movement simulating wind */
     }
     @keyframes splashing {
       0% { transform: scale(0); }
