@@ -30,19 +30,19 @@
     }
     .drop {
       position: absolute;
-      width: 2px; /* Wider drops */
-      height: 100px; /* Longer and more elegant drops */
-      background: linear-gradient(rgba(255, 255, 255, 0.8), transparent); /* Gradient drop with higher opacity for realism */
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(rgba(255, 255, 255, 0.8), transparent);
       border-radius: 50%;
-      animation: rainFall 0.5s linear infinite; /* More subtle fall */
+      animation: rainFall 0.5s linear infinite;
     }
     .splash {
       position: absolute;
       width: 15px;
       height: 1px;
-      background: rgba(255, 255, 255, 0.6); /* Brighter splashes for visibility */
+      background: rgba(255, 255, 255, 0.6);
       border-radius: 50%;
-      animation: splashing 0.6s ease-in-out infinite; /* Smoother splash animation */
+      animation: splashing 0.6s ease-in-out infinite;
     }
     .grayscaleButton {
       padding: 10px 20px;
@@ -81,11 +81,11 @@
     }
     @keyframes rainFall {
       0% { transform: translateY(0) translateX(0); }
-      100% { transform: translateY(1000px) translateX(50px); } /* Longer fall with horizontal movement simulating wind */
+      100% { transform: translateY(1000px) translateX(50px); }
     }
     @keyframes splashing {
       0% { transform: scale(0); }
-      100% { transform: scale(1.5); } /* Larger splash for dramatic effect */
+      100% { transform: scale(1.5); }
     }
     .thunder {
       position: relative;
@@ -128,10 +128,10 @@
         let randomLeft = randomRange(0, container.offsetWidth);
         drop.classList.add("drop");
         drop.style.left = randomLeft + "px";
-        drop.style.top = randomRange(-1000, 0) + "px"; // Starts higher for a longer fall
+        drop.style.top = randomRange(-1000, 0) + "px";
         if (i % 2 === 0) {
           splash.classList.add("splash");
-          splash.style.bottom = "0px"; // Splashes start at the bottom
+          splash.style.bottom = "0px";
           splash.style.left = randomLeft + "px";
           splash.style.animation = "splashing " + randomRange(.2, .7) + "s linear infinite";
           container.appendChild(splash);
@@ -166,15 +166,14 @@
           splashes[0].parentNode.removeChild(splashes[0]);
         }
         let sliderValue = slider.value;
-        rain(sliderValue * 3); // Modified to maintain a continuous rain effect while sliding
-      }, 150); // Reduced debounce timer to 150ms to ensure smoother sliding on mobile
+        rain(sliderValue * 3);
+      }, 150);
     }
 
     window.onload = function() {
-      rain(150); // Increased initial rain count for better coverage
+      rain(150);
     }
 
-    // Thunder and Lightning effects
     var canvas1 = document.getElementById('canvas1');
     var canvas2 = document.getElementById('canvas2');
     var canvas3 = document.getElementById('canvas3');
